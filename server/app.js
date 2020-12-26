@@ -7,11 +7,16 @@ app.use(bodyParser.json());
 
 //write your code 
 app.get('/user',(req,res)=>{
-    res.json({name:"taymaa"});
+    res.json({message:'Hello '+req.query.name});
+    
 })
-
-
+app.post('/user',(req,res)=>{
+    res.json({message:'Hello',name:req.body.name}); 
+    
+})
+ 
 app.listen(3000,()=>{
    console.log('server running on port 3000'); 
 });
+
 
